@@ -10836,7 +10836,7 @@ Return Value:
 Note:
 ========================================================================
 */
-#ifdef CONFIG_AP_SUPPORT
+#if 0 //def WSC_AP_SUPPORT
 extern INT	Set_AP_WscMode_Proc(
 	IN	PRTMP_ADAPTER	pAd, 
 	IN	PUCHAR			arg);
@@ -10873,7 +10873,7 @@ VOID WSC_HDR_BTN_CheckHandler(
 			/* execute WSC PBC function */
 			DBGPRINT(RT_DEBUG_ERROR, ("wsc> execute WSC PBC...\n"));
 
-#ifdef CONFIG_AP_SUPPORT
+#if 0 //def WSC_AP_SUPPORT
 			IF_DEV_CONFIG_OPMODE_ON_AP(pAd)
 			{
 				pObj->ioctl_if = 0;

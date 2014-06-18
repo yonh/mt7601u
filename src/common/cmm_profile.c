@@ -3213,6 +3213,16 @@ NDIS_STATUS	RTMPSetProfileParameters(
 					}
 				}
 			}
+
+#ifdef AP_SCAN_SUPPORT
+			/*ACSCheckTime*/
+			if (RTMPGetKeyParameter("ACSCheckTime", tmpbuf, 32, pBuffer, TRUE))
+			{
+				UINT8 Hour = simple_strtol(tmpbuf, 0, 10);
+				pAd->ApCfg.ACSCheckTime = Hour*3600; /* Hour to second */
+				DBGPRINT(RT_DEBUG_TRACE, ("ACSCheckTime = %u (hour) \n", Hour));
+			}
+#endif /* AP_SCAN_SUPPORT */			
 		}
 #endif /* CONFIG_AP_SUPPORT */
 

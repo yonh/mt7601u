@@ -1856,16 +1856,16 @@ typedef	union _TX_AGG_CNT7_STRUC {
 #ifdef RT_BIG_ENDIAN
 typedef	union _TX_AGG_CNT_STRUC {
 	struct {
-	    UINT16  AggCnt_y;	/* the count of aggregation size = x + 1 */
-	    UINT16  AggCnt_x;	/* the count of aggregation size = x */
+	    UINT16  AggTxCount;	/* the count of aggregation size = x + 1 */
+	    UINT16  NonAggTxCount;	/* the count of aggregation size = x */
 	} field;
 	UINT32 word;
 } TX_AGG_CNT_STRUC;
 #else
 typedef	union _TX_AGG_CNT_STRUC {
 	struct {
-	    UINT16  AggCnt_x;
-	    UINT16  AggCnt_y;
+	    UINT16  NonAggTxCount;
+	    UINT16  AggTxCount;
 	} field;
 	UINT32 word;
 } TX_AGG_CNT_STRUC;

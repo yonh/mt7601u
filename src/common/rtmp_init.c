@@ -2652,6 +2652,9 @@ VOID UserCfgInit(RTMP_ADAPTER *pAd)
 	
 
 #ifdef CONFIG_AP_SUPPORT
+#ifdef AP_SCAN_SUPPORT
+	pAd->ApCfg.ACSCheckTime = 0;
+#endif /* AP_SCAN_SUPPORT */
 #endif /* CONFIG_AP_SUPPORT */
 
 #ifdef CARRIER_DETECTION_SUPPORT

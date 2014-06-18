@@ -299,7 +299,6 @@ typedef struct _RSSI_SAMPLE {
 	(QueueHeader)->Tail = (PQUEUE_ENTRY)(QueueEntry);					\
 	(QueueHeader)->Number++;											\
 }
-void DisplayTxAgg (RTMP_ADAPTER *pAd);
 
 
 /* */
@@ -3072,6 +3071,10 @@ typedef struct _AP_ADMIN_CONFIG {
 
 	BOOLEAN bAutoChannelAtBootup;	/* 0: disable, 1: enable */
 	ChannelSel_Alg AutoChannelAlg;	/* Alg for selecting Channel */
+#ifdef AP_SCAN_SUPPORT
+	UINT32  ACSCheckTime;           /* Periodic timer to trigger Auto Channel Selection (unit: second) */
+	UINT32  ACSCheckCount;          /* if  ACSCheckCount > ACSCheckTime, then do ACS check */
+#endif /* AP_SCAN_SUPPORT */
 	BOOLEAN bAvoidDfsChannel;	/* 0: disable, 1: enable */
 	BOOLEAN bIsolateInterStaTraffic;
 	BOOLEAN bHideSsid;

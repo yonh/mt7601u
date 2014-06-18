@@ -1,3 +1,5 @@
+WIFI_MODE = AP
+
 ifeq ($(WIFI_MODE),)
 RT28xx_MODE = STA
 else

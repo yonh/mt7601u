@@ -2879,8 +2879,8 @@ INT AsicReadAggCnt(RTMP_ADAPTER *pAd, ULONG *aggCnt, int cnt_len)
 		{
 			RTMP_IO_READ32(pAd, reg_addr, &reg_val.word);
 			if (cnt < (cnt_len -1)) {
-				aggCnt[cnt] = reg_val.field.AggCnt_x;
-				aggCnt[cnt+1] = reg_val.field.AggCnt_y;
+				aggCnt[cnt] = reg_val.field.NonAggTxCount;
+				aggCnt[cnt+1] = reg_val.field.AggTxCount;
 				DBGPRINT(RT_DEBUG_TRACE, ("%s():Get AggSize at Reg(0x%x) with val(0x%08x) [AGG_%d=>%ld, AGG_%d=>%ld]\n",
 						__FUNCTION__, reg_addr, reg_val.word, cnt, aggCnt[cnt], cnt+1, aggCnt[cnt+1]));
 				cnt += 2;
